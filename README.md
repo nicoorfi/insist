@@ -1,85 +1,36 @@
-# insist
+# Insist
 
-[![Latest Version on Packagist][ico-version]][link-packagist]
-[![Software License][ico-license]](LICENSE.md)
-[![Build Status][ico-travis]][link-travis]
-[![Coverage Status][ico-scrutinizer]][link-scrutinizer]
-[![Quality Score][ico-code-quality]][link-code-quality]
-[![Total Downloads][ico-downloads]][link-downloads]
-
-**Note:** Replace ```Nico Orfanos``` ```nicoorfi``` ```https://github.com/nicoorfi``` ```nico@sigmie.com``` ```nicoorfi``` ```insist``` ```A method wrapper around eventsauce/backoff, that retries callables``` with their correct values in [README.md](README.md), [CHANGELOG.md](CHANGELOG.md), [CONTRIBUTING.md](CONTRIBUTING.md), [LICENSE.md](LICENSE.md) and [composer.json](composer.json) files, then delete this line. You can run `$ php prefill.php` in the command line to make all replacements at once. Delete the file prefill.php as well.
-
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what
-PSRs you support to avoid any confusion with users and contributors.
-
-## Structure
-
-If any of the following are applicable to your project, then the directory structure should follow industry best practices by being named the following.
-
-```
-bin/        
-build/
-docs/
-config/
-src/
-tests/
-vendor/
-```
-
+Method wrappers around eventsauce/backoff, that retries callables actions thay may fail.
 
 ## Install
 
 Via Composer
 
-``` bash
+```bash
 $ composer require nicoorfi/insist
 ```
 
 ## Usage
 
-``` php
-$skeleton = new nicoorfi\insist();
-echo $skeleton->echoPhrase('Hello, League!');
+```php
+
+insist_fibonnaci($actionThatMayFail,
+    100000, // initial delay in microseconds, 0.1 seconds
+    15, // max number of tries
+    2500000, // (optional) max delay in microseconds, default 2.5 seconds
+);
+
+insist_linear($actionThatMayFail,
+    100000, // initial delay in microseconds, 0.1 seconds
+    15, // max number of tries
+    2500000, // (optional) max delay in microseconds, default 2.5 seconds
+);
 ```
 
 ## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
 
-## Testing
-
-``` bash
-$ composer test
-```
-
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) and [CODE_OF_CONDUCT](CODE_OF_CONDUCT.md) for details.
-
-## Security
-
-If you discover any security related issues, please email nico@sigmie.com instead of using the issue tracker.
-
-## Credits
-
-- [Nico Orfanos][link-author]
-- [All Contributors][link-contributors]
-
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
-
-[ico-version]: https://img.shields.io/packagist/v/nicoorfi/insist.svg?style=flat-square
-[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/nicoorfi/insist/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/nicoorfi/insist.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/nicoorfi/insist.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/nicoorfi/insist.svg?style=flat-square
-
-[link-packagist]: https://packagist.org/packages/nicoorfi/insist
-[link-travis]: https://travis-ci.org/nicoorfi/insist
-[link-scrutinizer]: https://scrutinizer-ci.com/g/nicoorfi/insist/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/nicoorfi/insist
-[link-downloads]: https://packagist.org/packages/nicoorfi/insist
-[link-author]: https://github.com/nicoorfi
-[link-contributors]: ../../contributors

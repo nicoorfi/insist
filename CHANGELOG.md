@@ -1,22 +1,18 @@
+<!--- BEGIN HEADER -->
 # Changelog
 
-All notable changes to `insist` will be documented in this file.
+All notable changes to this project will be documented in this file.
+<!--- END HEADER -->
 
-Updates should follow the [Keep a CHANGELOG](https://keepachangelog.com/) principles.
+## [](https://github.com/nicoorfi/insist/compare/v1.0.0...v) (2022-03-04)
 
-## NEXT - YYYY-MM-DD
+---
 
-### Added
-- Nothing
+## [1.0.0](https://github.com/nicoorfi/insist/compare/8238b9e5cccfda0d357611a9383a623f02a5fa26...v1.0.0) (2022-03-04)
+### Features
 
-### Deprecated
-- Nothing
+* Add backoff strategies wrapper functions ([a12e10](https://github.com/nicoorfi/insist/commit/a12e103591f222142d25327b7cc31c43d0a8aef4))
 
-### Fixed
-- Nothing
 
-### Removed
-- Nothing
+---
 
-### Security
-- Nothing

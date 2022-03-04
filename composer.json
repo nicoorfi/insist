@@ -17,20 +17,25 @@
         }
     ],
     "require": {
-        "php" : "~7.2"
+        "php": "^8.0",
+        "eventsauce/backoff": "^1.1"
     },
     "require-dev": {
-        "phpunit/phpunit" : ">=8.0",
-        "squizlabs/php_codesniffer": "^3.0"
+        "phpunit/phpunit": ">=8.0",
+        "squizlabs/php_codesniffer": "^3.0",
+        "symfony/var-dumper": "^6.0"
     },
     "autoload": {
         "psr-4": {
-            "nicoorfi\\insist\\": "src"
-        }
+            "Nicoorfi\\Insist\\": "src"
+        },
+        "files": [
+            "src/functions.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
-            "nicoorfi\\insist\\": "tests"
+            "Nicoorfi\\Insist\\": "tests"
         }
     },
     "scripts": {

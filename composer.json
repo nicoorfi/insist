@@ -1,18 +1,18 @@
 {
-    "name": ":vendor/:package_name",
+    "name": "nicoorfi/insist",
     "type": "library",
-    "description": ":package_description",
+    "description": "A method wrapper around eventsauce/backoff, that retries callables",
     "keywords": [
-        ":vendor",
-        ":package_name"
+        "nicoorfi",
+        "insist"
     ],
-    "homepage": "https://github.com/:vendor/:package_name",
+    "homepage": "https://github.com/nicoorfi/insist",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": ":author_email",
-            "homepage": ":author_website",
+            "name": "Nico Orfanos",
+            "email": "nico@sigmie.com",
+            "homepage": "https://github.com/nicoorfi",
             "role": "Developer"
         }
     ],
@@ -25,12 +25,12 @@
     },
     "autoload": {
         "psr-4": {
-            ":vendor\\:package_name\\": "src"
+            "nicoorfi\\insist\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            ":vendor\\:package_name\\": "tests"
+            "nicoorfi\\insist\\": "tests"
         }
     },
     "scripts": {

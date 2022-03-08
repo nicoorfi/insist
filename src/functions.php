@@ -20,7 +20,7 @@ namespace Nicoorfi\Insist {
         start:
         try {
             ++$tries;
-            $callback();
+            return $callback();
         } catch (Throwable $throwable) {
             $strategy->backoff($tries, $throwable);
             goto start;
@@ -35,7 +35,7 @@ namespace Nicoorfi\Insist {
         ?callable $sleeper = null,
         ?Jitter $jitter = null
     ) {
-        insist($callback, new FibonacciBackOffStrategy($initialDelayMs, $maxTries, $maxDelay, $sleeper, $jitter));
+        return insist($callback, new FibonacciBackOffStrategy($initialDelayMs, $maxTries, $maxDelay, $sleeper, $jitter));
     }
 
     function insist_linear(
@@ -46,7 +46,7 @@ namespace Nicoorfi\Insist {
         ?callable $sleeper = null,
         ?Jitter $jitter = null
     ) {
-        insist($callback, new LinearBackOffStrategy($initialDelayMs, $maxTries, $maxDelay, $sleeper, $jitter));
+        return insist($callback, new LinearBackOffStrategy($initialDelayMs, $maxTries, $maxDelay, $sleeper, $jitter));
     }
 
     function insist_exponential(
@@ -58,19 +58,19 @@ namespace Nicoorfi\Insist {
         ?callable $sleeper = null,
         ?Jitter $jitter = null
     ) {
-        insist($callback, new ExponentialBackOffStrategy($initialDelayMs, $maxTries, $maxDelay, $base, $sleeper, $jitter));
+        return insist($callback, new ExponentialBackOffStrategy($initialDelayMs, $maxTries, $maxDelay, $base, $sleeper, $jitter));
     }
 
     function insist_nowait(
         callable $callback,
         int $maxTries,
     ) {
-        insist($callback, new NoWaitingBackOffStrategy($maxTries));
+        return insist($callback, new NoWaitingBackOffStrategy($maxTries));
     }
 
     function insist_fail(
         callable $callback,
     ) {
-        insist($callback, new ImmediatelyFailingBackOffStrategy());
+        return insist($callback, new ImmediatelyFailingBackOffStrategy());
     }
 };

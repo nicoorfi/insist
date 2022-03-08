@@ -4,7 +4,7 @@
     "description": "Method wrappers around eventsauce/backoff, that retries callables actions thay may fail.",
     "keywords": [
         "nicoorfi",
-        "insistjj"
+        "insist"
     ],
     "homepage": "https://github.com/nicoorfi/insist",
     "license": "MIT",
@@ -51,5 +51,5 @@
     "config": {
         "sort-packages": true
     },
-    "version": "1.0.0"
+    "version": "1.0.1"
 }
